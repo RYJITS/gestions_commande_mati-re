@@ -16,12 +16,14 @@ Rendre les commandes matiere plus lisibles, controlables et synchronisables avec
 ## Installation locale
 
 ```powershell
-# Installation a documenter
+# Aucune installation requise
 ```
 
 ## Lancement
 
-Commande de lancement a documenter selon le projet.
+```powershell
+Start-Process .\index.html
+```
 
 ## Variables d'environnement
 
