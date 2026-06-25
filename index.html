@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Commande Matiere - Application</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cpath d='M6 8.5 12 5l6 3.5v7L12 19l-6-3.5v-7Z' fill='none' stroke='white' stroke-width='1.8'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navigation principale">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" />
+              <path d="m8 10 4 2.2 4-2.2" />
+              <path d="M12 12.2v4.6" />
+            </svg>
+          </div>
+          <div>
+            <span class="brand-title">Commande Matiere</span>
+            <span class="brand-subtitle">Atelier</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <button class="nav-item active" type="button" data-view="dashboard">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6v7H4v-7Zm10-9h6v16h-6V4ZM4 4h6v5H4V4Z" /></svg>
+            <span>Tableau</span>
+          </button>
+          <button class="nav-item" type="button" data-view="commandes">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Z" /><path d="M14 3v4h4M9 11h6M9 15h6" /></svg>
+            <span>Commande</span>
+          </button>
+          <button class="nav-item" type="button" data-view="archives">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v4H4V6Zm2 4h12v10H6V10Zm4 4h4" /></svg>
+            <span>Archives</span>
+          </button>
+          <button class="nav-item" type="button" data-view="referentiels">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v5H5V5Zm0 9h14v5H5v-5ZM8 7.5h.1M8 16.5h.1" /></svg>
+            <span>Referentiels</span>
+          </button>
+        </nav>
+
+        <div class="side-status">
+          <span class="status-dot"></span>
+          <div>
+            <strong>Donnees generees</strong>
+            <span id="side-count">0 lignes</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <section class="view active" id="dashboard-view" aria-labelledby="dashboard-heading">
+          <div class="section-head">
+            <div>
+              <h2 id="dashboard-heading">Indicateurs</h2>
+              <p>1525 lignes d'archives, modele equivalent au classeur.</p>
+            </div>
+            <div class="segmented" role="tablist" aria-label="Periode">
+              <button class="selected" type="button" data-period="all">Tout</button>
+              <button type="button" data-period="90">90 j</button>
+              <button type="button" data-period="30">30 j</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid" id="kpi-grid"></div>
+
+          <div class="dashboard-grid">
+            <section class="panel chart-panel">
+              <div class="panel-head">
+                <h3>Flux mensuel</h3>
+                <span id="trend-caption">Commandes archivees</span>
+              </div>
+              <div class="chart-area" id="trend-chart"></div>
+            </section>
+
+            <section class="panel chart-panel">
+              <div class="panel-head">
+                <h3>Statuts</h3>
+                <span>Repartition active</span>
+              </div>
+              <div class="status-bars" id="status-bars"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <h3>Alertes planif</h3>
+                <span id="alert-count">0</span>
+              </div>
+              <div class="alert-list" id="alert-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="commandes-view" aria-labelledby="commandes-heading">
+          <div class="section-head">
+            <div>
+              <h2 id="commandes-heading">Commande matiere</h2>
+              <p>Champs blancs a remplir, champs gris calcules automatiquement.</p>
+            </div>
+            <div class="action-row">
+              <button class="soft-button" type="button" id="reset-form">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v6h6M20 20v-6h-6M5 15a7 7 0 0 0 11.9 3M19 9A7 7 0 0 0 7.1 6" /></svg>
+                Reinitialiser
+              </button>
+            </div>
+          </div>
+
+          <div class="command-layout">
+            <section class="panel form-panel">
+              <form id="order-form" class="order-form"></form>
+            </section>
+
+            <aside class="panel workflow-panel">
+              <div class="panel-head">
+                <h3>Email</h3>
+                <span id="selected-order-label">Pret</span>
+              </div>
+              <div class="toggle-grid" id="workflow-toggles"></div>
+              <div class="workflow-actions">
+                <button class="primary-button full" type="button" id="archive-order">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4V6Zm0 2 8 5 8-5" /></svg>
+                  Envoyer
+                </button>
+              </div>
+              <div class="email-preview" id="email-preview"></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="archives-view" aria-labelledby="archives-heading">
+          <div class="section-head">
+            <div>
+              <h2 id="archives-heading">Archives</h2>
+              <p id="archive-summary">0 ligne</p>
+            </div>
+            <div class="filters">
+              <select id="status-filter" aria-label="Filtrer par statut"></select>
+              <select id="planif-filter" aria-label="Filtrer par planification"></select>
+              <button class="soft-button" type="button" id="bulk-planifie" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7 9 18l-5-5" /></svg>
+                Planifier selection
+              </button>
+            </div>
+          </div>
+
+          <section class="panel archive-actions-panel" id="archive-actions" aria-label="Actions SAP archives"></section>
+
+          <div class="table-wrap panel">
+            <table class="data-table" id="archive-table">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="pager">
+            <button class="soft-button" type="button" id="prev-page">Precedent</button>
+            <span id="page-label">Page 1</span>
+            <button class="soft-button" type="button" id="next-page">Suivant</button>
+          </div>
+        </section>
+
+        <section class="view" id="referentiels-view" aria-labelledby="referentiels-heading">
+          <div class="section-head">
+            <div>
+              <h2 id="referentiels-heading">Referentiels</h2>
+              <p>Listes equivalentes aux feuilles SPC, O, Liste et Article_VERIF.</p>
+            </div>
+          </div>
+          <div class="reference-grid" id="reference-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="sap-modal-backdrop" id="sap-modal" hidden>
+      <section class="sap-window" role="dialog" aria-modal="true" aria-labelledby="sap-modal-title">
+        <header class="sap-window-head">
+          <div>
+            <span class="eyebrow">SAP</span>
+            <h2 id="sap-modal-title">Execution</h2>
+          </div>
+          <button class="icon-button" type="button" id="sap-close" title="Fermer" aria-label="Fermer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+          </button>
+        </header>
+        <div class="sap-progress-meta">
+          <strong id="sap-current-step">Pret</strong>
+          <span id="sap-progress-label">0%</span>
+        </div>
+        <div class="sap-progress" aria-label="Progression SAP">
+          <span id="sap-progress-fill"></span>
+        </div>
+        <div class="sap-run-meta" id="sap-run-meta"></div>
+        <div class="sap-log-head">
+          <span>Actions en cours</span>
+          <strong id="sap-step-count">0/0</strong>
+        </div>
+        <div class="sap-log" id="sap-log"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
