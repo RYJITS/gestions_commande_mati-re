@@ -25,6 +25,12 @@ Rendre les commandes matiere plus lisibles, controlables et synchronisables avec
 Start-Process .\index.html
 ```
 
+## Captures d'ecran
+
+![Capture capture](docs/github-captures/05-gestions-commande-matiere-2026-06-20_1858-archives.png)
+
+![Capture capture](docs/github-captures/05-gestions-commande-matiere-2026-06-20_1858-commande.png)
+
 ## Variables d'environnement
 
 Aucune variable d'environnement n'a ete detectee par l'orchestrateur.
