@@ -1,8 +1,47 @@
 # Gestions Commande Matière
 
-## Rapport complet
+## Presentation
 
-Ce depot public presente le concept, les fonctions, les choix de conception, les outils utilises, les commandes locales et les captures d'ecran de l'application. Il est genere par l'orchestrateur uniquement apres validation de publication publique.
+Gestions Commande Matière est presente ici avec son concept, ses fonctions, ses choix de conception et ses informations d'utilisation.
+
+## Demarrage rapide
+
+### Pre-requis
+
+- Git installe localement.
+
+### Installer et lancer
+
+```powershell
+git clone https://github.com/RYJITS/gestions_commande_mati-re.git
+cd gestions_commande_mati-re
+# Aucune installation requise
+Start-Process .\index.html
+```
+
+## Installation locale
+
+Aucune installation requise. L'application est un projet statique HTML/CSS/JavaScript. Prérequis : navigateur web moderne (Chrome, Firefox, Edge, Safari). Aucun serveur local n'est nécessaire : ouvrir directement le fichier index.html dans le navigateur.
+
+### Pre-requis
+- Verifier les pre-requis propres au projet dans le README.
+
+### Commandes
+```powershell
+git clone https://github.com/RYJITS/gestions_commande_mati-re.git
+cd gestions_commande_mati-re
+# Aucune installation requise
+```
+
+## Lancement
+
+```powershell
+Start-Process .\index.html
+```
+
+## Utilisation
+
+1. Ouvrir index.html dans un navigateur. 2. Utiliser la barre latérale pour naviguer entre les vues (Tableau, Commande, Archives, Référentiels). 3. Dans Commande : saisir machine, nombre d'OF et type (PROD/MET) ; les champs gris se remplissent automatiquement ; cliquer sur 'Envoyer' pour simuler l'envoi d'un email et archiver la ligne. 4. Dans Archives : filtrer/sortir/paginer, sélectionner des lignes pour planification en masse, modifier directement les cellules. 5. Dans Référentiels : consulter et éditer les listes SPC, options, MET, etc. 6. Exporter l’état courant en JSON via le bouton dédié. Les données sont sauvegardées automatiquement dans localStorage.
 
 ## Concept
 
@@ -27,16 +66,6 @@ L'application fonctionne entièrement côté client en HTML/CSS/JavaScript. Elle
 - Export de l'état local en JSON
 - Visualisation des indicateurs (flux mensuel, répartition des statuts, alertes planif)
 - Saisie rapide de commandes matière avec auto-remplissage
-- Saisie rapide avec auto-remplissage déterministe
-- Édition inline des archives et référentiels
-- Filtrage, tri et pagination côté client
-- Visualisation dynamique des KPI (graphiques SVG, alertes planif)
-- Simulation traçable d'actions SAP (fenêtre modale avec progression et journal)
-- Génération reproductible de données fictives via seeds
-- Export JSON de l’état local
-- Design responsive compatible mobile
-- Notifications toast pour feedback utilisateur
-- Régénération volontaire du jeu de données fictif
 
 ## Actualisations et evolution
 
@@ -45,15 +74,10 @@ L'application fonctionne entièrement côté client en HTML/CSS/JavaScript. Elle
 - Génération initiale de 1 525 lignes d'archives fictives pour correspondre au volume du classeur source
 - Mise à jour du CHANGELOG pour refléter l'état PUBLIC_READY
 - Ajout de captures d'écran dans la documentation (2026-06-20)
-- Statut courant: PUBLIC_READY.
-- Securite: OK_PUBLIC.
-- Fonctionnement: FONCTIONNEL.
 
 ## Comment le projet a ete reflechi et construit
 
 Le projet a été conçu comme une reconstruction sécurisée : il conserve la structure, les volumes, les noms de colonnes et les cas d'usage du classeur source, mais remplace systématiquement les données métiers par des valeurs fictives générées localement à partir de seeds reproductibles. L’approche statique (sans backend) garantit zéro exposition de données. Le design suit les principes Windows 11 (Mica, Segoe UI, navigation latérale, boutons compacts) et intègre une compatibilité mobile via des tables horizontales scrollables. La modularité des vues (Tableau, Commande, Archives, Référentiels) facilite la maintenance. La fenêtre SAP simulée assure traçabilité des actions, tandis que les calculs JavaScript traduisent fidèlement les formules Excel (IFERROR, XLOOKUP) pour les statuts planif et taux de couverture.
-
-Cette section doit expliquer les choix qui ont guide le projet: besoin de depart, structure retenue, modules principaux, compromis techniques, interface ou logique metier, et raisons des outils utilises.
 
 ### Outils, IA et moteurs utilises
 
@@ -72,7 +96,6 @@ Cette section doit expliquer les choix qui ont guide le projet: besoin de depart
 ### Options techniques detectees
 
 - Type de projet: static-html
-- Statut securite: OK_PUBLIC
 
 ### Stack et dependances principales
 
@@ -106,29 +129,6 @@ Cette section doit expliquer les choix qui ont guide le projet: besoin de depart
 - Export JSON de l'état courant
 - Affichage dynamique des indicateurs (KPI)
 
-## Installation locale
-
-Aucune installation requise. L'application est un projet statique HTML/CSS/JavaScript. Prérequis : navigateur web moderne (Chrome, Firefox, Edge, Safari). Aucun serveur local n'est nécessaire : ouvrir directement le fichier index.html dans le navigateur.
-
-### Pre-requis
-- Verifier les pre-requis propres au projet dans le README.
-
-### Commandes
-```powershell
-# Aucune installation requise
-Start-Process .\index.html
-```
-
-## Lancement
-
-```powershell
-Start-Process .\index.html
-```
-
-## Utilisation
-
-1. Ouvrir index.html dans un navigateur. 2. Utiliser la barre latérale pour naviguer entre les vues (Tableau, Commande, Archives, Référentiels). 3. Dans Commande : saisir machine, nombre d'OF et type (PROD/MET) ; les champs gris se remplissent automatiquement ; cliquer sur 'Envoyer' pour simuler l'envoi d'un email et archiver la ligne. 4. Dans Archives : filtrer/sortir/paginer, sélectionner des lignes pour planification en masse, modifier directement les cellules. 5. Dans Référentiels : consulter et éditer les listes SPC, options, MET, etc. 6. Exporter l’état courant en JSON via le bouton dédié. Les données sont sauvegardées automatiquement dans localStorage.
-
 ## Captures d'ecran
 
 ![Capture capture](docs/github-captures/05-gestions-commande-matiere-2026-06-20_1858-archives.png)
@@ -137,7 +137,7 @@ Start-Process .\index.html
 
 ## Variables d'environnement
 
-Aucune variable d'environnement n'a ete detectee par l'orchestrateur.
+Aucune variable d'environnement n'est requise d'apres les fichiers publies.
 
 ## Securite
 

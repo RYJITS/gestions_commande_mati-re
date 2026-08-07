@@ -1,5 +1,8 @@
 # Installation - Gestions Commande Matière
 
-Chemin: `D:\00_Cerveau_IA\Projet\05_Gestions_Commande_Matière`
+```powershell
+git clone https://github.com/RYJITS/gestions_commande_mati-re.git
+cd gestions_commande_mati-re
+```
 
-Aucun `package.json` detecte. Verification manuelle necessaire.
+Aucun `package.json` detecte. Consulter le `README.md` et la fiche projet pour les pre-requis et l'utilisation.
