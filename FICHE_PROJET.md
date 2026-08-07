@@ -54,8 +54,5 @@ Aucune installation requise. L'application est un projet statique HTML/CSS/JavaS
 ![Capture 2 - Gestions Commande Matière](docs/captures/05-gestions-commande-matiere-2026-06-20_1858-archives.png)
 
 ## Mises a jour
-- Synchronisation de la documentation projet avec l'orchestrateur global (2026-06-28)
-- Validation de l'audit sécurité : statut OK_PUBLIC (2026-06-28)
 - Génération initiale de 1 525 lignes d'archives fictives pour correspondre au volume du classeur source
-- Mise à jour du CHANGELOG pour refléter l'état PUBLIC_READY
 - Ajout de captures d'écran dans la documentation (2026-06-20)
