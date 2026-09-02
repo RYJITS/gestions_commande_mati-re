@@ -128,9 +128,9 @@ Le projet a été conçu comme une reconstruction sécurisée : il conserve la s
 
 ## Captures d'ecran
 
-![Capture capture](docs/github-captures/05-gestions-commande-matiere-2026-06-20_1858-archives.png)
+![Capture desktop](docs/github-captures/05-gestions-commande-matiere-2026-08-30_02-27-37-desktop.png)
 
-![Capture capture](docs/github-captures/05-gestions-commande-matiere-2026-06-20_1858-commande.png)
+![Capture mobile](docs/github-captures/05-gestions-commande-matiere-2026-08-30_02-27-37-mobile.png)
 
 ## Variables d'environnement
 
