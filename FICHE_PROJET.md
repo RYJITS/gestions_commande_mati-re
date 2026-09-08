@@ -12,7 +12,7 @@ Projet explique sur Site Ma Methode: la fiche publique peut presenter son utilit
 - Fonctionnement: fonctionnel.
 - Securite: OK pour une presentation publique.
 - Ma Methode: fiche explicative visible.
-- Publication externe: candidat public, validation finale separee.
+- Publication externe: GitHub public actif.
 
 ## A quoi sert le projet
 L'application est une reconstruction sécurisée du flux métier du classeur Excel COMMANDE_MATIERE.xlsm. Elle permet de piloter des commandes matière fictives, d’archiver des saisies, de consulter et modifier des référentiels, de suivre des lignes galva, et de visualiser des indicateurs clés — le tout sans exposer aucune donnée sensible du fichier source. Elle remplace les macros VBA, les connexions SAP/ADO/Outlook par des simulations locales fiables et traçables.
@@ -59,9 +59,9 @@ Aucune installation requise. L'application est un projet statique HTML/CSS/JavaS
 - Affichage dynamique des indicateurs (KPI)
 
 ## Captures d'ecran
-![Capture 1 - Gestions Commande Matière](docs/captures/05-gestions-commande-matiere-2026-08-30_02-27-37-desktop.png)
+![Capture 1 - Gestions Commande Matière](docs/github-captures/05-gestions-commande-matiere-2026-08-30_02-27-37-desktop.png)
 
-![Capture 2 - Gestions Commande Matière](docs/captures/05-gestions-commande-matiere-2026-08-30_02-27-37-mobile.png)
+![Capture 2 - Gestions Commande Matière](docs/github-captures/05-gestions-commande-matiere-2026-08-30_02-27-37-mobile.png)
 
 ## Mises a jour
 - Génération initiale de 1 525 lignes d'archives fictives pour correspondre au volume du classeur source
