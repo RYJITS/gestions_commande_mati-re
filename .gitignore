@@ -69,3 +69,6 @@ venv/
 _tmp/
 searxng-src/
 *.pyc
+
+# Classeur prive exclu de l'historique Git
+COMMANDE_MATIERE.xlsm
